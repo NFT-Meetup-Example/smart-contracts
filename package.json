@@ -8,6 +8,7 @@
     "prettier": "prettier --write **/*.sol",
     "build": "truffle compile",
     "migration": "truffle migration",
+    "coverage": "node --max-old-space-size=4096 ./node_modules/.bin/truffle run coverage",
     "deploy:rinkeby": "truffle deploy --network rinkeby --reset",
     "deploy:mainnet": "truffle deploy --network mainnet --reset"
   },
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "@openzeppelin/test-helpers": "^0.5.9",
+    "solidity-coverage": "^0.7.13",
     "solium": "^1.2.5"
   }
 }

@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "truffle test",
-    "lint": "solhint contracts/**/*.sol",
+    "lint": "solium -d contracts/",
     "prettier": "prettier --write **/*.sol",
     "build": "truffle compile",
     "migration": "truffle migration",
@@ -24,8 +24,6 @@
   },
   "devDependencies": {
     "@openzeppelin/test-helpers": "^0.5.9",
-    "prettier": "^2.1.2",
-    "prettier-plugin-solidity": "^1.0.0-alpha.59",
-    "solhint": "^3.2.2"
+    "solium": "^1.2.5"
   }
 }

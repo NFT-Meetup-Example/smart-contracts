@@ -1,16 +1,16 @@
 const Start = artifacts.require('Start');
-const BigNumber = require('bignumber.js');
 
 contract('Start', (accounts) => {
     let start;
+    const owner = accounts[0];
 
     beforeEach(async () => {
-        start = await Start.new();
+        start = await Start.new({ from: owner });
     });
 
     it('has correct magic number', async () => {
-        await start.setMagic((new BigNumber(31337).multipliedBy(1e+18)).toString(10));
+        await start.setMagic(31337);
         const value = await start.magic();
-        assert.equal(value, (new BigNumber(31337).multipliedBy(1e+18)).toString(10));
+        assert.equal(value, 31337);
     });
-})
+});

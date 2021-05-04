@@ -1,6 +1,4 @@
-const HDWalletProvider = require('truffle-hdwallet-provider');
-const NonceTrackerSubprovider = require('web3-provider-engine/subproviders/nonce-tracker');
-const config = require('config');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
 const TestRPC = require('ganache-cli');
 
 module.exports = {
@@ -10,29 +8,13 @@ module.exports = {
             network_id: '*'
         },
         rinkeby: {
-            provider: function () {
-                let w = new HDWalletProvider(config.get('rinkeby.truffle.privateKey'), config.get('rinkeby.blockchain.rpc'));
-                let nonceTracker = new NonceTrackerSubprovider();
-                w.engine._providers.unshift(nonceTracker);
-                nonceTracker.setEngine(w.engine);
-                return w;
-            },
-            network_id: config.get('rinkeby.blockchain.networkId'),
-            gas: 4000000,
-            gasPrice: 10000000000000
+            provider: () => new HDWalletProvider(mnemonic, 'https://rinkeby.infura.io/v3/<>'),
+            network_id: 4
         },
         mainnet: {
-            provider: function () {
-                let w = new HDWalletProvider(config.get('mainnet.truffle.privateKey'), config.get('mainnet.blockchain.rpc'));
-                let nonceTracker = new NonceTrackerSubprovider();
-                w.engine._providers.unshift(nonceTracker);
-                nonceTracker.setEngine(w.engine);
-                return w;
-            },
-            network_id: config.get('mainnet.blockchain.networkId'),
-            gas: 2000000,
-            gasPrice: 60000000000
-        },
+            provider: () => new HDWalletProvider(mnemonic, 'https://mainnet.infura.io/v3/<>'),
+            network_id: 1
+        }
     },
     plugins: ["solidity-coverage"],
     compilers: {
@@ -45,4 +27,4 @@ module.exports = {
             }
         }
     }
-}
+};

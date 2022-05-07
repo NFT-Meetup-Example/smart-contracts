@@ -9,19 +9,21 @@
     "migration": "truffle migration",
     "coverage": "node --max-old-space-size=4096 ./node_modules/.bin/truffle run coverage",
     "deploy:rinkeby": "truffle deploy --network rinkeby --reset",
-    "deploy:mainnet": "truffle deploy --network mainnet --reset"
+    "deploy:testnet": "truffle deploy --network testnet --reset",
+    "deploy:eth": "truffle deploy --network eth --reset",
+    "deploy:bsc": "truffle deploy --network bsc --reset"
   },
   "author": "",
   "license": "GPL-3.0",
   "dependencies": {
-    "@openzeppelin/contracts": "^3.4.0"
+    "@openzeppelin/contracts": "^4.6.0"
   },
   "devDependencies": {
-    "@openzeppelin/test-helpers": "^0.5.11",
-    "@truffle/hdwallet-provider": "^1.2.0",
-    "ganache-cli": "^6.12.2",
-    "solhint": "^3.3.4",
-    "solidity-coverage": "^0.7.16",
-    "truffle": "^5.3.4"
+    "@openzeppelin/test-helpers": "^0.5.15",
+    "@truffle/hdwallet-provider": "^2.0.8",
+    "ganache": "^7.1.0",
+    "solhint": "^3.3.7",
+    "solidity-coverage": "^0.7.21",
+    "truffle": "^5.5.13"
   }
 }

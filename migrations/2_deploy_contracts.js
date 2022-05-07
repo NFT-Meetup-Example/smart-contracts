@@ -1,5 +1,5 @@
-const Start = artifacts.require('./Start');
+const Example = artifacts.require('./Example');
 
 module.exports = function(deployer) {
-    return deployer.deploy(Start);
+    return deployer.deploy(Example);
 };

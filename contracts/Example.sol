@@ -1,11 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.6.12;
+pragma solidity ^0.8.0;
 
-import "@openzeppelin/contracts/math/SafeMath.sol";
-
-contract Start {
-    using SafeMath for uint256;
-
+contract Example {
     uint256 private _magic;
 
     function magic() public view returns (uint256) {

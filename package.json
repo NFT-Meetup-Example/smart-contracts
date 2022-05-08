@@ -21,7 +21,6 @@
   "devDependencies": {
     "@openzeppelin/test-helpers": "^0.5.15",
     "@truffle/hdwallet-provider": "^2.0.8",
-    "ganache": "^7.1.0",
     "solhint": "^3.3.7",
     "solidity-coverage": "^0.7.21",
     "truffle": "^5.5.13"

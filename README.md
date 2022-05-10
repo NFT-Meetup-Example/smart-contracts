@@ -34,7 +34,7 @@ BSC mainnet
 npm run deploy:bsc
 ```
 
-## Test
+## Test contracts
 
 ```
 npm run test

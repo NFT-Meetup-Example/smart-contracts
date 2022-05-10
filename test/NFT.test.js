@@ -1,4 +1,4 @@
-const { BN, ether } = require('@openzeppelin/test-helpers');
+const { ether } = require('@openzeppelin/test-helpers');
 
 const NFT = artifacts.require('NFT');
 
@@ -36,5 +36,12 @@ contract('NFT', (accounts) => {
         await this.nft.withdraw({ from: owner });
         const balanceOwner = await web3.eth.getBalance(owner);
         assert.equal(balanceOwner, '100990050241141401460');
+    });
+
+    it('has correct URI', async () => {
+        await this.nft.mint({ from: recipient, value: ether('1') });
+
+        const tokenURI = await this.nft.tokenURI(0);
+        assert.equal(tokenURI, 'https://test.site/0');
     });
 });

@@ -27,7 +27,11 @@ module.exports = {
             gasPrice: 10000000000
         }
     },
-    plugins: ["solidity-coverage"],
+    plugins: ["solidity-coverage", "truffle-plugin-verify"],
+    api_keys: {
+        etherscan: process.env.ETHERSCANAPIKEY,
+        bscscan: process.env.BSCSCANAPIKEY
+    },
     compilers: {
         solc: {
             version: '^0.8.0',

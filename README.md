@@ -13,29 +13,40 @@ Starter project for solidity smart contract
 npm i
 ```
 
-## Deploy contracts
-Rinkeby - Ethereum testnet
-```
-npm run deploy:rinkeby
-```
-
-BSC testnet
-```
-npm run deploy:testnet
-```
-
-Ethereum mainnet
-```
-npm run deploy:eth
-```
-
-BSC mainnet
-```
-npm run deploy:bsc
-```
-
 ## Test contracts
 
 ```
 npm run test
+```
+
+## Deploy contracts
+Rinkeby - Ethereum testnet
+```
+PRIVKEY=YOUR_KEY npm run deploy:rinkeby
+```
+
+BSC testnet
+```
+PRIVKEY=YOUR_KEY npm run deploy:testnet
+```
+
+Ethereum mainnet
+```
+PRIVKEY=YOUR_KEY npm run deploy:eth
+```
+
+BSC mainnet
+```
+PRIVKEY=YOUR_KEY npm run deploy:bsc
+```
+
+## Verify contracts
+etherscan.io
+```
+PRIVKEY=YOUR_KEY ETHERSCANAPIKEY=YOUR_KEY npx truffle run verify NFT@YOUR_ADDRESS_CONTRACT --network eth
+```
+
+bscscan.com
+```
+PRIVKEY=YOUR_KEY BSCSCANAPIKEY=YOUR_KEY npx truffle run verify NFT@YOUR_ADDRESS_CONTRACT --network bsc
 ```

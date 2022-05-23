@@ -60,3 +60,8 @@ bscscan.com
 ```
 npx truffle run verify NFT@YOUR_ADDRESS_CONTRACT --network bsc
 ```
+
+polygonscan.com
+```
+npx truffle run verify NFT@YOUR_ADDRESS_CONTRACT --network polygon
+```

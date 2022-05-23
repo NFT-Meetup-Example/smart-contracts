@@ -39,7 +39,8 @@ module.exports = {
     plugins: ["solidity-coverage", "truffle-plugin-verify"],
     api_keys: {
         etherscan: process.env.ETHERSCANAPIKEY,
-        bscscan: process.env.BSCSCANAPIKEY
+        bscscan: process.env.BSCSCANAPIKEY,
+        polygonscan: process.env.POLYGONSCANAPIKEY
     },
     compilers: {
         solc: {

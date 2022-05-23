@@ -28,12 +28,16 @@ module.exports = {
             gasPrice: 10000000000
         },
         mumbai: {
-            provider: () => new HDWalletProvider(process.env.PRIVKEY, 'https://rpc-mumbai.matic.today'),
-            network_id: 80001
+            provider: () => new HDWalletProvider(process.env.PRIVKEY, 'https://matic-mumbai.chainstacklabs.com'),
+            network_id: 80001,
+            confirmations: 2,
+            skipDryRun: true
         },
         polygon: {
             provider: () => new HDWalletProvider(process.env.PRIVKEY, 'https://rpc-mainnet.matic.network'),
-            network_id: 137
+            network_id: 137,
+            confirmations: 2,
+            skipDryRun: true
         }
     },
     plugins: ["solidity-coverage", "truffle-plugin-verify"],

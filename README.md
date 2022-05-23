@@ -22,31 +22,41 @@ npm run test
 ## Deploy contracts
 Rinkeby - Ethereum testnet
 ```
-PRIVKEY=YOUR_KEY npm run deploy:rinkeby
+npm run deploy:rinkeby
 ```
 
 BSC testnet
 ```
-PRIVKEY=YOUR_KEY npm run deploy:testnet
+npm run deploy:testnet
+```
+
+Mumbai - Polygon testnet
+```
+npm run deploy:mumbai
 ```
 
 Ethereum mainnet
 ```
-PRIVKEY=YOUR_KEY npm run deploy:eth
+npm run deploy:eth
 ```
 
 BSC mainnet
 ```
-PRIVKEY=YOUR_KEY npm run deploy:bsc
+npm run deploy:bsc
+```
+
+Polygon mainnet
+```
+npm run deploy:polygon
 ```
 
 ## Verify contracts
 etherscan.io
 ```
-PRIVKEY=YOUR_KEY ETHERSCANAPIKEY=YOUR_KEY npx truffle run verify NFT@YOUR_ADDRESS_CONTRACT --network eth
+npx truffle run verify NFT@YOUR_ADDRESS_CONTRACT --network eth
 ```
 
 bscscan.com
 ```
-PRIVKEY=YOUR_KEY BSCSCANAPIKEY=YOUR_KEY npx truffle run verify NFT@YOUR_ADDRESS_CONTRACT --network bsc
+npx truffle run verify NFT@YOUR_ADDRESS_CONTRACT --network bsc
 ```

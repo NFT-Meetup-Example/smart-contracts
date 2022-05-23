@@ -40,7 +40,12 @@ contract('NFT', (accounts) => {
     it('has correct URI', async () => {
         await this.nft.mint({ from: recipient, value: ether('1') });
 
-        const tokenURI = await this.nft.tokenURI(0);
+        let tokenURI = await this.nft.tokenURI(0);
         assert.equal(tokenURI, 'https://test.site/0');
+
+        await this.nft.setBaseURI("https://test.app/");
+
+        tokenURI = await this.nft.tokenURI(0);
+        assert.equal(tokenURI, 'https://test.app/0');
     });
 });

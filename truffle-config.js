@@ -1,4 +1,5 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
+require('dotenv').config(".env");
 
 module.exports = {
     networks: {
@@ -25,6 +26,14 @@ module.exports = {
             skipDryRun: true,
             networkCheckTimeout: 500000000,
             gasPrice: 10000000000
+        },
+        mumbai: {
+            provider: () => new HDWalletProvider(process.env.PRIVKEY, 'https://rpc-mumbai.matic.today'),
+            network_id: 80001
+        },
+        polygon: {
+            provider: () => new HDWalletProvider(process.env.PRIVKEY, 'https://rpc-mainnet.matic.network'),
+            network_id: 137
         }
     },
     plugins: ["solidity-coverage", "truffle-plugin-verify"],

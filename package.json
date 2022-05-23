@@ -1,5 +1,5 @@
 {
-  "name": "solidity-starter",
+  "name": "smart-contracts",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -14,9 +14,10 @@
     "deploy:bsc": "truffle deploy --network bsc --reset"
   },
   "author": "",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "dependencies": {
-    "@openzeppelin/contracts": "^4.6.0"
+    "@openzeppelin/contracts": "^4.6.0",
+    "dotenv": "^16.0.1"
   },
   "devDependencies": {
     "@openzeppelin/test-helpers": "^0.5.15",
